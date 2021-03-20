@@ -1,10 +1,11 @@
 import Category from "../model/Category";
+import ICategoriesRepository from "./ICategoriesRepository";
 
 interface ICreateCategoryDTO {
     name: string;
     description: string;
 }
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
     private categories: Category[];
 
     constructor() {
@@ -24,7 +25,7 @@ class CategoriesRepository {
 
         this.categories.push(category);
     }
-    findByNamee(name: string): Category {
+    findByName(name: string): Category {
         const category = this.categories.find(
             (category) => category.name === name
         );
