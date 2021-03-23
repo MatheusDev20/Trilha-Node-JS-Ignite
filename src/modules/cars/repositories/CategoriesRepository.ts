@@ -13,6 +13,7 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     list(): Category[] {
+        console.log(this.categories);
         return this.categories;
     }
     create({ name, description }: ICreateCategoryDTO): void {
@@ -24,6 +25,7 @@ class CategoriesRepository implements ICategoriesRepository {
         });
 
         this.categories.push(category);
+        console.log(this.categories);
     }
     findByName(name: string): Category {
         const category = this.categories.find(
