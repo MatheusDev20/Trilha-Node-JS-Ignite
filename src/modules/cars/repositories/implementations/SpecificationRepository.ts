@@ -1,5 +1,6 @@
 import Specification from "../../model/Specification";
 import ISpecificationRepository from "../ISpecificationRepository";
+import CategoriesRepository from "./CategoriesRepository";
 
 interface ICreateSpecificationDTO {
     name: string;
@@ -7,7 +8,14 @@ interface ICreateSpecificationDTO {
 }
 class SpecificationRepository implements ISpecificationRepository {
     private specifications: Specification[];
+    private static INSTANCE: SpecificationRepository;
+    public static getInstance(): SpecificationRepository {
+        if (!SpecificationRepository.INSTANCE) {
+            SpecificationRepository.INSTANCE = new SpecificationRepository();
+        }
 
+        return SpecificationRepository.INSTANCE;
+    }
     constructor() {
         this.specifications = [];
     }
