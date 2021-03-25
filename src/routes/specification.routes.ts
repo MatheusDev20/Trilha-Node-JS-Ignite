@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-import createSpecificationController from "../modules/cars/useCases/createSpecification/index";
-import listEspecificationController from "../modules/cars/useCases/listSpecifications/index";
+import createSpecificationController from "../modules/cars/useCases/Specification/createSpecification/index";
+import listEspecificationController from "../modules/cars/useCases/Specification/listSpecifications/index";
 
 const specificationRoutes = Router();
 specificationRoutes.post("/", (req, res) => {

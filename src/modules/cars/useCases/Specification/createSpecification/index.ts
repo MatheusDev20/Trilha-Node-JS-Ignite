@@ -2,7 +2,7 @@
 // Instancia o Service que recebe o Repositorio como arg
 // Instanciar o Controller que recebe o service como Arg
 
-import SpecificationRepository from "../../repositories/implementations/SpecificationRepository";
+import SpecificationRepository from "../../../repositories/implementations/SpecificationRepository";
 import CreateSpecificationService from "./CreateSpecification";
 import CreateSpecificationController from "./CreateSpecificationController";
 
