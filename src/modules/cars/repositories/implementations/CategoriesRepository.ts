@@ -33,7 +33,6 @@ class CategoriesRepository implements ICategoriesRepository {
         });
 
         this.categories.push(category);
-        console.log(this.categories);
     }
     findByName(name: string): Category {
         const category = this.categories.find(
