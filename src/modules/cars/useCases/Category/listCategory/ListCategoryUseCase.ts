@@ -6,7 +6,7 @@ class ListCategoryUseCase {
     constructor(categoriesRepository: ICategoriesRepository) {
         this.categoriesRepository = categoriesRepository; // Dependecy Inversion principle, injetando o repository no service
     }
-    execute(): Category[] {
+    execute(): Promise<Category[]> {
         const categories = this.categoriesRepository.list();
 
         return categories;

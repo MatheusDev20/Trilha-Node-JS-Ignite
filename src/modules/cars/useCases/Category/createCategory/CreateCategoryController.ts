@@ -4,12 +4,15 @@ import CreateCategory from "./CreateCategory";
 
 class CreateCategoryController {
     constructor(private createCategory: CreateCategory) {} // Injetando o service dentro do controller via
+
     // Dependency Inversion
 
-    handle(req: Request, res: Response): Response {
+    async handle(req: Request, res: Response): Promise<Response> {
         const { name, description } = req.body;
+
         this.createCategory.execute({
             name,
+
             description,
         });
 
